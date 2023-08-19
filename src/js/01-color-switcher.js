@@ -4,7 +4,6 @@ const elements = {
 }
 let timerId = null;
 
-
 function intervalClickStart() {
     elements.startBtn.disabled = true;
     elements.stopBtn.disabled = false;
