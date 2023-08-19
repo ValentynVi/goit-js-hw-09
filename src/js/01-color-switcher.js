@@ -5,10 +5,12 @@ const elements = {
 let timerId = null;
 
 function intervalClickStart() {
-    elements.startBtn.disabled = true;
-    elements.stopBtn.disabled = false;
+    // elements.startBtn.disabled = true;
+    // elements.stopBtn.disabled = false;
 
     timerId = setInterval(() => {
+        elements.startBtn.disabled = true;
+        elements.stopBtn.disabled = false;
         document.body.style.backgroundColor = getRandomHexColor();
     }, 1000)
 
