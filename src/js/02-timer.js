@@ -56,7 +56,7 @@ elements.startBtn.addEventListener('click', startBtnClick);
 elements.startBtn.disabled = true;
 
 function startBtnClick() {
-    setInterval(() => {
+    const intervalId = setInterval(() => {
         const userDate = calendar.selectedDates[0].getTime();
         // const currentDate = options.defaultDate.getTime();
         const currentDate = new Date().getTime();
@@ -65,6 +65,10 @@ function startBtnClick() {
         elements.hours.textContent = convertMs(ms).hours;
         elements.minutes.textContent = convertMs(ms).minutes;
         elements.seconds.textContent = convertMs(ms).seconds;
+
+        if (ms <= 0) {
+            clearInterval(intervalId);
+        }
     }, 1000)
 
 }
