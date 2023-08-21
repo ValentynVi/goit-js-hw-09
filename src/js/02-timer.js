@@ -61,13 +61,20 @@ function startBtnClick() {
         // const currentDate = options.defaultDate.getTime();
         const currentDate = new Date().getTime();
         const ms = userDate - currentDate;
-        elements.days.textContent = convertMs(ms).days;
-        elements.hours.textContent = convertMs(ms).hours;
-        elements.minutes.textContent = convertMs(ms).minutes;
-        elements.seconds.textContent = convertMs(ms).seconds;
+
 
         if (ms <= 0) {
             clearInterval(intervalId);
+            elements.days.textContent = '00';
+            elements.hours.textContent = '00';
+            elements.minutes.textContent = '00';
+            elements.seconds.textContent = '00';
+            elements.startBtn.disabled = false;
+        } else {
+            elements.days.textContent = convertMs(ms).days;
+            elements.hours.textContent = convertMs(ms).hours;
+            elements.minutes.textContent = convertMs(ms).minutes;
+            elements.seconds.textContent = convertMs(ms).seconds;
         }
     }, 1000)
 
